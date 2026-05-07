@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--EXERCICIO NÃO TERMINADO. CONHECIMENTO INSUFICIENTE-->
+<body>
+    <main>
+        <div id="calculator">
+            <section id="screen">
+                <input type="text" name="screen" id="s_input" disabled>
+            </section>
+            <section id="keys-set">
+                <div class="key seven">7</div>
+                <div class="key eight">8</div>
+                <div class="key nine">9</div>
+                <div class="key plus">+</div>
+                <div class="key four">4</div>
+                <div class="key five">5</div>
+                <div class="key six">6</div>
+                <div class="key minus">-</div>
+                <div class="key one">1</div>
+                <div class="key two">2</div>
+                <div class="key three">3</div>
+                <div class="key equal">=</div>
+                <div class="key zero">0</div>
+            </section>
+        </div>
+    </main>
+<!--EXERCICIO NÃO TERMINADO. CONHECIMENTO INSUFICIENTE-->
+    <script>
+        //EXERCICIO NÃO TERMINADO. CONHECIMENTO INSUFICIENTE
+
+        var c_screen = document.querySelector('input#s_input')
+        var keyboard = document.querySelector('section#keys-set')
+        var seven = document.querySelector('div.seven')
+        var eight = document.querySelector('div.eight')
+        var nine = document.querySelector('div.nine')
+        var plus = document.querySelector('div.plus')
+        var four = document.querySelector('div.four')
+        var five = document.querySelector('div.five')
+        var six = document.querySelector('div.six')
+        var minus = document.querySelector('div.minus')
+        var one = document.querySelector('div.one')
+        var two = document.querySelector('div.two')
+        var three = document.querySelector('div.three')
+        var equal = document.querySelector('div.equal')
+        var zero = document.querySelector('div.zero')
+
+        //ESSA PARTE NÃO FOI ENSINADA. APENAS PARA COMPLEMENTAR O EXERCÍCIO PESSOAL.
+
+        keyboard.addEventListener('click', function(k) {
+            c_screen.value = c_screen.value + k.target.innerHTML
+
+            }
+            
+        )
+
+        equal.addEventListener('click', result)
+
+        function result() {
+            c_screen.value = Number(c_screen.value)
+        }
+
+        
+
+        
+        
+    </script>
+</body>
+</html>

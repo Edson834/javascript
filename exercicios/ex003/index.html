@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercitando com DOM</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 80vh;
+        }
+        main {
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+        }
+        #container {
+            border: 2px solid blue;
+            background-color: rgba(0, 255, 255, 0.342);
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: all .5s;
+        }
+
+        .item {
+            border: 1px solid blue;
+            padding: 40px;
+
+            transition: all .5s;
+        }
+
+        #botao {
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgb(0, 0, 0);
+            background-color: darkblue;
+            color: lightgray;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            transition: all .1s;
+        }
+
+        #botao:hover {
+            box-shadow: 0px 0px 20px rgb(0, 0, 0);
+            background-color: blue;
+            color: white;
+        }
+
+        #botao:hover:active {
+            box-shadow: none;
+            transform: translate(1px, 1px);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Exercício com as primeiras considerações de DOM
+    </h1>
+
+    <main>
+        <div id="container" onclick="clicar()" ondblclick="duplo()" onmouseout="sair()">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+        </div>
+        <div id="botao" onclick="escuro()">
+            Escuro
+        </div>
+    </main>
+
+    <script>
+        var pai = document.getElementById('container')
+        var botao = document.getElementById('botao')
+        var corpo = document.getElementsByTagName('body')[0]
+        
+        function clicar() {
+            pai.style.flexFlow = 'column nowrap'
+            pai.style.backgroundColor = 'brown'
+            pai.style.color = 'gold'
+        }
+
+        function duplo() {
+            pai.style.flexFlow = 'row nowrap'
+            pai.style.justifyContent = 'flex-end'
+            pai.style.backgroundColor = 'violet'
+            pai.style.color = 'red'
+            
+        }
+
+        function sair() {
+            pai.style.backgroundColor = 'rgba(0, 255, 255, 0.342);'
+            pai.style.flexFlow = 'row nowrap'
+            pai.style.justifyContent = 'center' 
+        }
+
+        function escuro() {
+            
+            corpo.style.backgroundColor = 'gray'
+            pai.style.color = 'white'
+            pai.style.boxShadow = '0px 0px 100px yellow'
+            botao.style.backgroundColor = 'orange'
+            botao.style.color = 'white'
+            botao.innerText = 'Nice'
+           // botao.style.boxShadow = ''
+        }
+    </script>
+</body>
+</html>
