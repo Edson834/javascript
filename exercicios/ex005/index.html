@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Verificação de cidadania</h1>
+    <span>O seu país: </span>
+    <input type="text" id="nacionalidade">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="info"></div>
+
+    <script>
+        var campo = document.getElementById('nacionalidade')
+        var info = document.querySelector('div#info')
+
+        function verificar() {
+            if (campo.value =='Angola') {
+                info.innerHTML = 'Vivendo em Angola, você é angolano'
+            }else{
+                info.innerHTML = 'Vivendo em Angola, você é estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -75,7 +75,7 @@
             <div class="item">B</div>
             <div class="item">C</div>
         </div>
-        <div id="botao" onclick="escuro()">
+        <div id="botao" onclick="toggle()">
             Escuro
         </div>
     </main>
@@ -105,15 +105,26 @@
             pai.style.justifyContent = 'center' 
         }
 
-        function escuro() {
-            
-            corpo.style.backgroundColor = 'gray'
-            pai.style.color = 'white'
-            pai.style.boxShadow = '0px 0px 100px yellow'
-            botao.style.backgroundColor = 'orange'
-            botao.style.color = 'white'
-            botao.innerText = 'Nice'
-           // botao.style.boxShadow = ''
+        function toggle() {
+            if(botao.innerText == 'Escuro'){
+                corpo.style.backgroundColor = 'gray'
+                corpo.style.color = 'white'
+                pai.style.color = 'white'
+                pai.style.boxShadow = '0px 0px 100px yellow'
+                botao.style.backgroundColor = 'orange'
+                botao.style.color = 'white'
+                botao.innerText = 'Claro'
+            }else{
+                corpo.style.backgroundColor = 'white'
+                corpo.style.color = 'black'
+                pai.style.color = 'black'
+                pai.style.boxShadow = 'none'
+                botao.style.backgroundColor = 'darkblue'
+                botao.style.color = 'white'
+                botao.innerText = 'Escuro'
+            }
+                
+
         }
     </script>
 </body>

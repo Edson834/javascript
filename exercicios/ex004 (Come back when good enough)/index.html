@@ -11,7 +11,7 @@
     <main>
         <div id="calculator">
             <section id="screen">
-                <input type="text" name="screen" id="s_input" disabled>
+                <input type="text" name="screen" id="c_input" >
             </section>
             <section id="keys-set">
                 <div class="key seven">7</div>
@@ -34,7 +34,7 @@
     <script>
         //EXERCICIO NÃO TERMINADO. CONHECIMENTO INSUFICIENTE
 
-        var c_screen = document.querySelector('input#s_input')
+        var c_screen = document.querySelector('input#c_input')
         var keyboard = document.querySelector('section#keys-set')
         var seven = document.querySelector('div.seven')
         var eight = document.querySelector('div.eight')
@@ -52,18 +52,32 @@
 
         //ESSA PARTE NÃO FOI ENSINADA. APENAS PARA COMPLEMENTAR O EXERCÍCIO PESSOAL.
 
+        
+
         keyboard.addEventListener('click', function(k) {
+            /*if (c_screen.value.lenght >= 3 && c_screen.value[1] == '+' || '=' in String(c_screen.value)) {
+
+                sum = Number(c_screen.value[0]) + Number(c_screen.value[2])
+                c_screen.value =  String(sum) + k.target.innerHTML
+            }else{
+                c_screen.value = c_screen.value + k.target.innerHTML
+            }*/
+
             c_screen.value = c_screen.value + k.target.innerHTML
 
             }
             
         )
 
-        equal.addEventListener('click', result)
+        equal.addEventListener('click', function result(e) {
+            if (c_screen.value[1] == '+') {
 
-        function result() {
-            c_screen.value = Number(c_screen.value)
-        }
+                sum = Number(c_screen.value[0]) + Number(c_screen.value[2])
+                c_screen.value =  String(sum) 
+            }
+        })
+
+        
 
         
 
