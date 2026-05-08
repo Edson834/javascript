@@ -18,7 +18,7 @@ main {
 }
 
 #calculator {
-    width: 400px;
+    width: 500px;
     height: 400px;
     display: flex;
     flex-flow: column nowrap;
@@ -44,12 +44,26 @@ main {
 
 #keys-set {
     background-color: lightseagreen;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 5px;
     flex: auto;
     border-top: 1px solid black;
     padding: 10px;
+}
+
+#numbers {
+    flex: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+#operators {
+    flex: 0 1 25%;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+    gap: 5px;
 }
 
 .key {
@@ -68,21 +82,16 @@ main {
     box-shadow: none;
 }
 
-.plus {
-    color: white;
-}
-
-.minus {
+#operators div{
     color: white;
 }
 
 .equal {
     color: white;
-    grid-area: 3 / 4 / 5 / 5;
+    grid-area: 3 / 1 / -1 / -1;
+    font-size: 5em;
 }
 
 .zero {
-    grid-row: 4 / 5;
-    grid-column: 1 / -2;
-
+    grid-column: 1 / -1;
 }
