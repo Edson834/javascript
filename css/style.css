@@ -6,6 +6,17 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(228, 228, 228);
+}
+
+header {
+    background-color: darkslateblue;
+    color: white;
+    text-align: center;
+}
+
 h1 {
     margin-bottom: 10px;
 }
@@ -14,21 +25,35 @@ h2 {
     margin-bottom: 10px;
 }
 
-#projects {
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
+#info {
+    padding: 10px;
+    background-color: rgb(105, 93, 189);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .project {
+    background-color: rgb(56, 42, 153);
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 400px;
     height: 108px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.39);
-    font-size: 2em;
-    font-weight: bold;
     text-decoration: none;
-    color: black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.39);
     cursor: pointer;
     overflow: hidden;
     transition: box-shadow .3s;
@@ -39,7 +64,7 @@ h2 {
 }
 
 .project:hover .image {
-    flex-basis: 50%;
+    flex-basis: 40%;
     transform: translatex(0px);
 }
 
@@ -48,23 +73,45 @@ h2 {
     box-shadow: 0px 0px 0px black;
 }
 
+.project:active .name {
+    font-size: 0em;
+    padding-left: 0px;
+
+}
+
+.project:active .image {
+    transform: translatex(0px);
+    flex-basis: 100%;
+    
+}
+
+.name {
+    padding-left: 10px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    transition: all .3s;
+    
+}
+
+
 .image {
     align-self: stretch;
+    flex-basis: 20%;
     justify-content: center;
     display: flex;
     justify-content: center;
     background-color: lightskyblue;
 
-    transform: translatex(30px);
+    transform: translatex(60px);
     transition-duration: .3s;
 }
 
 .image img {
-    flex: 0 1;
+    flex: 0 1 100px;
     align-self: stretch;
     background-color: lightskyblue;
     margin: auto;
-    width: 100px;
     height: 100%;
     aspect-ratio: 1/1;
 }
