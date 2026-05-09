@@ -10,7 +10,7 @@
     <main>
         <div id="calculator">
             <section id="screen">
-                <input type="text" name="screen" id="c_input" disabled>
+                <input type="text" name="screen" value="0" id="c_input" disabled>
             </section>
             <section id="keys-set">
                 <div id="numbers">
@@ -34,6 +34,7 @@
                     <div class="key times" onclick="mult()">X</div>
                     <div class="key divi" onclick="div()">%</div>
                     <div class="key equal" onclick="tot()">=</div>
+                    <div class="key clear" onclick="cls()">C</div>
                 </div>
             </section>
         </div>
@@ -57,7 +58,7 @@
         var zero = document.querySelector('div.zero')
         var result = 0
         const calc = []
-        var isClicked = false
+        var isClicked = true
 
         
 
@@ -265,6 +266,13 @@
                     calc.length = 0
                 }
             }
+        }
+
+        function cls() {
+            isClicked = true
+            c_screen.value = '0'
+            result = 0
+            calc.length = 0
         }
     </script>
 </body>
