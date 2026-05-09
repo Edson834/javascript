@@ -6,12 +6,11 @@
     <title>Calculando</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<!--EXERCICIO NÃO TERMINADO.-->
 <body>
     <main>
         <div id="calculator">
             <section id="screen">
-                <input type="text" name="screen" id="c_input" >
+                <input type="text" name="screen" id="c_input" disabled>
             </section>
             <section id="keys-set">
                 <div id="numbers">
@@ -25,6 +24,7 @@
                     <div class="key two">2</div>
                     <div class="key three">3</div>
                     <div class="key zero">0</div>
+                    <div class="key dblzero">00</div>
                 </div>
 
                 <div id="operators">
@@ -37,9 +37,7 @@
             </section>
         </div>
     </main>
-<!--EXERCICIO NÃO TERMINADO.-->
     <script>
-        //EXERCICIO NÃO TERMINADO.
 
         var c_screen = document.querySelector('input#c_input')
         var num_board = document.querySelector('div#numbers')
@@ -60,9 +58,9 @@
         const calc = []
         var isClicked = false
 
-        //ESSA PARTE NÃO FOI ENSINADA. APENAS PARA COMPLEMENTAR O EXERCÍCIO PESSOAL.
-
         
+
+        //A SINTAXE IMEDIATAMENTE ABAIXO NÃO FOI ENSINADA, PORÉM JÁ APRENDIDA PARA O EXERCÍCIO PESSOAL ACTUAL.
 
         num_board.addEventListener('click', function(k) {
             if (isClicked == true){
@@ -89,6 +87,23 @@
                 calc.length = 0
                 calc.push(result)
                 calc.push('+')
+            
+            }else if (calc[1] == 'x') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] * Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('+')
+            
+            }else if (calc[1] == '%') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] / Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('+')
+                
             }else{
                 calc.push(c_screen.value)
                 result = Number(calc[0]) + Number(calc[2])
@@ -114,6 +129,23 @@
                 calc.length = 0
                 calc.push(result)
                 calc.push('-')
+            
+            }else if (calc[1] == 'x') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] * Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('-')
+            
+            }else if (calc[1] == '%') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] / Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('-')
+
             }else{
                 calc.push(c_screen.value)
                 result = Number(calc[0]) - Number(calc[2])
@@ -129,6 +161,30 @@
             isClicked = true
             if (calc.length == 0) {
                 calc.push(c_screen.value)
+                calc.push('x')
+
+            }else if (calc[1] == '%') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] / Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('x')
+            
+            }else if (calc[1] == '-') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] - Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('x')
+
+            }else if (calc[1] == '+') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] + Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
                 calc.push('x')
             
             }else{
@@ -146,6 +202,31 @@
             if (calc.length == 0) {
                 calc.push(c_screen.value)
                 calc.push('%')
+
+            }else if (calc[1] == 'x') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] * Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('%')
+            
+            }else if (calc[1] == '-') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] - Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('%')
+
+            }else if (calc[1] == '+') {
+                calc.push(c_screen.value)
+                result = Number(calc[0] + Number(calc[2]))
+                c_screen.value = `${result}`
+                calc.length = 0
+                calc.push(result)
+                calc.push('%')
+
             }else{
                 calc.push(c_screen.value)
                 result = Number(calc[0]) / Number(calc[2])
@@ -176,16 +257,14 @@
                     result = Number(calc[0]) * Number(calc[2])
                     c_screen.value = `${result}`
                     calc.length = 0
+                }else{
+                    calc.push(c_screen.value)
+                    result = Number(calc[0]) / Number(calc[2])
+                    c_screen.value = `${result}`
+                    calc.length = 0
                 }
             }
         }
-
-        
-
-        
-
-        
-        
     </script>
 </body>
 </html>
