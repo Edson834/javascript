@@ -63,6 +63,10 @@ main {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.438);
 }
 
+.project:hover .name {
+    font-size: 1.4em;
+}
+
 .project:hover .image {
     flex-basis: 40%;
     transform: translatex(0px);
