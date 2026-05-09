@@ -7,6 +7,7 @@
 }
 
 body {
+    background-color: lightskyblue;
     height: 97vh;
 }
 
@@ -29,6 +30,7 @@ main {
 }
 
 #screen {
+    background-color: white;
     flex: 0 1 30%;
     padding: 10px;
 }
